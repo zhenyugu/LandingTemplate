@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingPageWebTemplate", "LandingPageWebTemplate\LandingPageWebTemplate.csproj", "{8FBC5EF3-DF7E-4572-AB59-482C1FD0BE73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2FF969FE-4960-4780-A2F0-D5B4D4895D28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8FBC5EF3-DF7E-4572-AB59-482C1FD0BE73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FBC5EF3-DF7E-4572-AB59-482C1FD0BE73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FBC5EF3-DF7E-4572-AB59-482C1FD0BE73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF969FE-4960-4780-A2F0-D5B4D4895D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF969FE-4960-4780-A2F0-D5B4D4895D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF969FE-4960-4780-A2F0-D5B4D4895D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF969FE-4960-4780-A2F0-D5B4D4895D28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
