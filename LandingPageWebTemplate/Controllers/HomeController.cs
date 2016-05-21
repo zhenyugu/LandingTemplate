@@ -27,8 +27,16 @@ namespace LandingPageWebTemplate.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult Products()
+        {
+            return View();
+        }
+
+        public ActionResult Culture()
+        {
             return View();
         }
     }
