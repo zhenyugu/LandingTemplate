@@ -13,7 +13,7 @@ namespace DataAccessLayer
     {
 
         public CustomizedDbContext()
-            : base("jjDbContext")
+            : base("JadeDbContext")
         {
            Database.SetInitializer(new DbInitializer());   
         }
@@ -28,6 +28,11 @@ namespace DataAccessLayer
             modelBuilder.Configurations.Add(new ProductionMap());
             modelBuilder.Configurations.Add(new ProductionImageMap());
             base.OnModelCreating(modelBuilder);
+        }
+
+        public static CustomizedDbContext Create()
+        {
+            return new CustomizedDbContext();
         }
     }
 }
