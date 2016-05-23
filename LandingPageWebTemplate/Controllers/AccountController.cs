@@ -30,11 +30,12 @@ namespace LandingPageWebTemplate.Controllers
             {
                 return View(model);
             }
-            var result = SignInManager.PasswordSignIn(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            
+            var result = SignInManager.PasswordSignIn(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction(returnUrl);
+                    return RedirectToAction("UserManagement");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -44,6 +45,11 @@ namespace LandingPageWebTemplate.Controllers
                     ModelState.AddModelError("", "登陆失败，请检查您的用户名或密码");
                     return View(model);
             }
+        }
+        [Authorize]
+        public ActionResult UserManagement()
+        {
+            return View();
         }
     }
 }

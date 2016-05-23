@@ -9,9 +9,9 @@ namespace LandingPageWebTemplate.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "邮箱")]
+        [Display(Name = "用户名")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

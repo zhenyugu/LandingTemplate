@@ -278,6 +278,7 @@
     <Content Include="Views\Shared\font-awesome\scss\_variables.scss" />
     <Content Include="Views\Home\Culture.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Account\UserManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
