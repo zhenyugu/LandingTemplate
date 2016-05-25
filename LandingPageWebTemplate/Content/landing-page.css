@@ -22,8 +22,9 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
+
 
 .lead {
     font-size: 18px;
@@ -32,7 +33,7 @@ h6 {
 
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
+    padding-bottom: 10%;
     text-align: center;
     color: #f8f8f8;
     background: url(../../../Content/images/yu_bg.jpg) no-repeat center center;
@@ -45,11 +46,11 @@ h6 {
     padding-bottom: 20%;
 }
 
-.intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 5em;
-}
+    .intro-message > h1 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 5em;
+    }
 
 .intro-divider {
     width: 400px;
@@ -66,9 +67,9 @@ h6 {
         padding-bottom: 15%;
     }
 
-    .intro-message > h1 {
-        font-size: 3em;
-    }
+        .intro-message > h1 {
+            font-size: 3em;
+        }
 
     ul.intro-social-buttons > li {
         display: block;
@@ -76,9 +77,9 @@ h6 {
         padding: 0;
     }
 
-    ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.intro-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 
     .intro-divider {
         width: 100%;
@@ -120,15 +121,15 @@ h6 {
     background-size: cover;
 }
 
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
 
-.banner ul {
-    margin-bottom: 0;
-}
+    .banner ul {
+        margin-bottom: 0;
+    }
 
 .banner-social-buttons {
     float: right;
@@ -155,14 +156,15 @@ h6 {
         padding: 0;
     }
 
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.banner-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 }
 
 footer {
-    padding: 50px 0;
+    /*padding: 50px 0;*/
     background-color: #f8f8f8;
+    text-align: center;
 }
 
 p.copyright {
