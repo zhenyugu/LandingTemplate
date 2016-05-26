@@ -28,7 +28,9 @@ namespace LandingPageWebTemplate
                       "~/Content/site.css",
                       "~/Content/landing-page.css",
                       "~/font-awesome/font-awesome.min.css"
-                         ));
+                      //"~/Content/bootstrap.min.css"
+                      )
+            );
         }
     }
 }

@@ -39,5 +39,10 @@ namespace LandingPageWebTemplate.Controllers
         {
             return View();
         }
+
+        public ActionResult ProductQuery()
+        {
+            return View();
+        }
     }
 }
