@@ -164,6 +164,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapwatch.min.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -279,6 +280,7 @@
     <Content Include="Views\Home\Culture.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Account\UserManagement.cshtml" />
+    <Content Include="Views\Home\ProductQuery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
