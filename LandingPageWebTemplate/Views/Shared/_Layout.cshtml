@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        @Html.ActionLink("首页", "Index", "Home", new { @class = "navbar-brand" })
+                        @Html.ActionLink("首页", "Index", "Home")
                     </li>
                     <li>
                         @Html.ActionLink("玉文化", "Culture", "Home")
@@ -59,11 +59,12 @@
         <!-- /.container -->
     </nav>
 
-    @RenderBody()
-
-    <div class="panel-footer">
-        <p style="margin-top:15px !important;text-align: center;">Copyright © 品玉屋 2016. All Rights Reserved</p>
+    <div>
+        @RenderBody()
     </div>
+    @*<div class="panel-footer">
+            <p style="margin-top:15px !important;text-align: center;">Copyright © 品玉屋 2016. All Rights Reserved</p>
+        </div>*@
 
 
 
