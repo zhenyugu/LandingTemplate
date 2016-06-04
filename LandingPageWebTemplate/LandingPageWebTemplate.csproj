@@ -249,6 +249,7 @@
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Content\font-awesome\scss\font-awesome.scss" />
+    <None Include="Properties\PublishProfiles\pinyuwu.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -318,6 +319,7 @@
     <Content Include="Views\Home\Culture.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Account\UserManagement.cshtml" />
+    <Content Include="Views\Home\ProductQuery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
