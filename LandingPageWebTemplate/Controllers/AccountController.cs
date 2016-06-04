@@ -1,4 +1,5 @@
-﻿using LandingPageWebTemplate.Models;
+﻿using DataAccessLayer.Model;
+using LandingPageWebTemplate.Models;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,13 @@ namespace LandingPageWebTemplate.Controllers
         [Authorize]
         public ActionResult UserManagement()
         {
+
             return View();
+        }
+
+        public ActionResult AddImage(FormCollection collection, HttpPostedFileBase images)
+        {
+            return RedirectToAction("UserManagement");
         }
     }
 }
