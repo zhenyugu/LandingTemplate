@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="pinyuwu" />
+  <setParameter name="JadeDbContext-Web.config Connection String" value="Data Source=(localdb)\ProjectsV12;Initial Catalog=Jade;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" />
+  <setParameter name="JadeDbContext_DatabasePublish-Web.config Connection String" value="JadeDbContext_DatabasePublish.ConnetionString" />
+</parameters>
