@@ -54,8 +54,43 @@ namespace LandingPageWebTemplate.Controllers
             return View();
         }
 
-        public ActionResult AddImage(FormCollection collection, HttpPostedFileBase images)
+        public ActionResult AddImage(FormCollection collection, HttpPostedFileBase image)
         {
+
+            var product = new Production
+            {
+                Name = collection["Name"],
+                Description = collection["Description"],
+                SerialNumber = collection["SerialNumber"],
+                Size = collection["Size"],
+                Weight = collection["Weight"]
+            };
+            
+            //if (System.IO.File.Exists(fullPath))
+            //{
+            //    System.IO.File.Delete(fullPath);
+            //    //Session["DeleteSuccess"] = "Yes";
+            //}
+            var contextType = image.ContentType;
+            if (contextType == "image/jpeg" ||  contextType == "image/png")
+            {
+                contextType = contextType.Replace("image/", ".");
+            }
+            else
+            {
+                ModelState.AddModelError("", "添加失败,图片格式仅支持jpeg,png");
+                return RedirectToAction("UserManagement");
+            }
+            string path = "~/Content/images/display/" + collection["Name"] + contextType;
+            string fullPath = Request.MapPath(path);
+            image.SaveAs(fullPath);
+            DbContext.Set<Production>().Add(product);
+            DbContext.Set<ProductionImage>().Add(new ProductionImage
+            {
+                ProductionId = product.Id,
+                ImageAddress = path
+            });
+            DbContext.SaveChanges();
             return RedirectToAction("UserManagement");
         }
     }

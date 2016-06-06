@@ -44,3 +44,18 @@ input[type="checkbox"].input-validation-error {
 #addImageBtn{
     margin-top:15px;
 }
+
+.photo-item{
+    padding-top:15px;
+    position:relative;
+}
+
+#photoView thumbnail{
+    position:relative;
+}
+
+#photoView i{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
