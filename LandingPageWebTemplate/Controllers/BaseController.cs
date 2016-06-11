@@ -21,7 +21,7 @@ namespace LandingPageWebTemplate.Controllers
 
         private CustomizedSignManager _signInManager;
 
-        private IdentityDbContext<IdentityUser> _dbContext;
+        private CustomizedDbContext _dbContext;
 
         public CustomizedUserManager UserManager
         {
@@ -47,7 +47,7 @@ namespace LandingPageWebTemplate.Controllers
             }
         }
 
-        public IdentityDbContext<IdentityUser> DbContext
+        public CustomizedDbContext DbContext
         {
             get
             {

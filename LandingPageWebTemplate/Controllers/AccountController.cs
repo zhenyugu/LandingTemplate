@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace LandingPageWebTemplate.Controllers
 {
@@ -51,7 +52,39 @@ namespace LandingPageWebTemplate.Controllers
         public ActionResult UserManagement()
         {
 
-            return View();
+            List<Production> productionsWithImage = DbContext.Productions.Include(p => p.Images).ToList();
+            
+            return View(productionsWithImage);
+        }
+        public ActionResult DeleteImage(string Id)
+        {
+            if (!DbContext.Productions.Any(p => p.Id == Id))
+            {
+                ModelState.AddModelError("", "修改失败，未找到对应的作品");
+                return RedirectToAction("UserManagement");
+            }
+            var dbProduct = DbContext.Productions.First(p => p.Id == Id);
+            DbContext.Productions.Remove(dbProduct);
+            DbContext.SaveChanges();
+            return RedirectToAction("UserManagement");
+        }
+
+        public ActionResult EditImage(Production production)
+        {
+            if (!DbContext.Productions.Any(p => p.Id == production.Id))
+            {
+                ModelState.AddModelError("", "修改失败，未找到对应的作品");
+                return RedirectToAction("UserManagement");
+            }
+            var dbProduct = DbContext.Productions.First(p => p.Id == production.Id);
+            dbProduct.Name = production.Name;
+            dbProduct.SerialNumber = production.SerialNumber;
+            dbProduct.Size = production.Size;
+            dbProduct.Weight = production.Weight;
+            dbProduct.Author = production.Author;
+            dbProduct.Description = production.Description;
+            DbContext.SaveChanges();
+            return RedirectToAction("UserManagement");
         }
 
         public ActionResult AddImage(FormCollection collection, HttpPostedFileBase image)
@@ -88,7 +121,7 @@ namespace LandingPageWebTemplate.Controllers
             DbContext.Set<ProductionImage>().Add(new ProductionImage
             {
                 ProductionId = product.Id,
-                ImageAddress = path
+                ImageAddress = path.Substring(1,path.Length - 1)
             });
             DbContext.SaveChanges();
             return RedirectToAction("UserManagement");

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Map;
+using DataAccessLayer.Model;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace DataAccessLayer
         public CustomizedDbContext()
             : base("JadeDbContext")
         {
+            Configuration.LazyLoadingEnabled = false; 
            Database.SetInitializer(new DbInitializer());   
         }
         public IDbSet<T> GetEntity<T>() where T : class
@@ -22,6 +24,9 @@ namespace DataAccessLayer
             return Set<T>();
         }
 
+        public IDbSet<Production> Productions { get; set; }
+
+        public IDbSet<ProductionImage> ProductionImages { get; set; }
 
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {

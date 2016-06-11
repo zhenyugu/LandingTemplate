@@ -2,10 +2,26 @@
     {
         <script src="@Url.Content("~/Scripts/photoManager.js") " type="text/javascript" ></script>
         <script>
-            
+            $(".thumbnail").mouseenter(function (eventObj) {
+                eventObj.currentTarget.childNodes[3].setAttribute("style", "display:inline");
+            })
+            $(".thumbnail").mouseleave(function (eventObj) {
+                eventObj.currentTarget.childNodes[3].setAttribute("style", "display:none");
+                $(this).find(".photo-dropdown").hide();
+            });
+
+            $(".icon-container").click(function (eventObject) {
+                $(this).next().toggle();
+            });
+            //$(".editProducion").click(function () {
+            //    $("#editModal form .form-group").eq(0).find("input").attr("value", "123");
+            //    $("#editModal").modal("show");
+            //})
+
+
         </script>
     }
-@model DataAccessLayer.Model.Production
+@model List<DataAccessLayer.Model.Production>
 <div class="container">
     <button class="btn btn-info" id="addImageBtn" data-toggle="modal" data-target="#addImageModal">
         <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
@@ -15,74 +31,115 @@
     
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+    
+
     <div class="row" id="photoView">
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j1.jpg" alt="image" />
-               
-                <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j2.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j3.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j4.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j1.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j2.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j3.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j4.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j1.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j2.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j3.jpg" alt="image" />
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3 photo-item">
-            <a href="#" class="thumbnail">
-                <img src="~/Content/images/display/j4.jpg" alt="image" />
-            </a>
-        </div>
-    </div>
+        @foreach (var production in Model)
+        {
+            <div class="col-xs-6 col-md-3 photo-item">
+                <div class="thumbnail" id="@production.Id">
+                    <img src="@production.Images.First().ImageAddress" alt="image" />
+                    <div class="icon-container">  
+                        <i class="glyphicon glyphicon-cog" aria-hidden="true"></i>
+                    </div>
+                    <div class="photo-dropdown">
+                        <ul>
+                            <li>
+                                <i class="glyphicon glyphicon-edit"></i>
+                                <span class="editProducion" data-toggle="modal" data-target="#editModal_@(production.Id)">编辑</span>
+                            <li>
+                                <i class="glyphicon glyphicon-remove"></i>
+                                <span data-toggle="modal" data-target="#deleteModal_@(production.Id)">删除</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="caption">
+                        <p class="text-center">@production.Name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="editModal_@(production.Id)" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myEditModalLabel">编辑作品</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    @using (Html.BeginForm("EditImage", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <input class="hidden" name="Id" value="@production.Id" />
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label">作品名称</label>
+                                            <div class="col-xs-10">
+                                                <input class="form-control" name="Name" placeholder="必填" required="required" type="text" value="@production.Name" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label">作品尺寸</label>
+                                            <div class="col-xs-10">
+                                                <input class="form-control" name="Size" type="text" value="@production.Size" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label">作品重量</label>
+                                            <div class="col-xs-10">
+                                                <input class="form-control" name="Weight" type="text" value="@production.Weight" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label">证书编号</label>
+                                            <div class="col-xs-10">
+                                                <input class="form-control" name="SerialNumber" placeholder="必填" required="required" value="@production.SerialNumber" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label">图片简介</label>
+                                            <div class="col-xs-10">
+                                                <textarea class="form-control" name="Description" rows="3">@production.Description</textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                            <button type="submit" class="btn btn-primary">保存修改</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>    
+            </div>
+
+            <div class="modal fade" id="deleteModal_@(production.Id)" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <p class="modal-title" id="myEditModalLabel">确定要删除吗</p>
+                        </div>
+                        <div class="modal-footer">
+                            @using (Html.BeginForm("DeleteImage", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input class="hidden" name="Id" value="@production.Id" />
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-primary">删除</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
 
 
-
-    <!-- Modal -->
+    <!-- Modal Add-->
     <div class="modal fade" id="addImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -99,31 +156,31 @@
                                 <div class="form-group">
                                     <label class="col-xs-2 control-label">作品名称</label>
                                     <div class="col-xs-10">
-                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "必填", required = "required" })
+                                        <input class="form-control" name="Name" placeholder="必填" required="required" type="text" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-xs-2 control-label">作品尺寸</label>
                                     <div class="col-xs-10">
-                                        @Html.TextBoxFor(m => m.Size, new { @class = "form-control" })
+                                        <input class="form-control" name="Size" type="text" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-xs-2 control-label">作品重量</label>
                                     <div class="col-xs-10">
-                                        @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
+                                        <input class="form-control" name="Weight" type="text" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-xs-2 control-label">证书编号</label>
                                     <div class="col-xs-10">
-                                        @Html.TextBoxFor(m => m.SerialNumber, new { @class = "form-control", placeholder = "必填", required = "required" })
+                                        <input class="form-control" name="SerialNumber" placeholder="必填" required="required" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-xs-2 control-label">图片简介</label>
                                     <div class="col-xs-10">
-                                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = "3" })
+                                        <textarea class="form-control" name="Description" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -146,6 +203,8 @@
         </div>
     </div>
 
+    <!-- Modal Edit-->
+    
 
 </div>
 

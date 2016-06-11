@@ -50,12 +50,67 @@ input[type="checkbox"].input-validation-error {
     position:relative;
 }
 
+.photo-item .caption{
+    padding-bottom:0px;
+}
+
 #photoView thumbnail{
     position:relative;
 }
 
 #photoView i{
+    color:gray;
+    margin:2px 2px 0 3px;
+    width:16px;
+    height:16px;
+    display:block;
+
+}
+
+.thumbnail > img{
+    height:210px;
+}
+
+.icon-container{
+    width:20px;
+    height:20px;
+    background-color:white;
     position:absolute;
-    top:20px;
-    right:20px;
+    top:22px;
+    right:22px;
+    display:none;
+}
+.icon-container:hover{
+    cursor:pointer;
+}
+
+.photo-dropdown{
+    position:absolute;
+    top:40px;
+    right:22px;
+    background-color:white;
+    display:none;
+}
+
+.photo-dropdown ul{
+    padding:1px;
+    margin-bottom:5px;
+}
+.photo-dropdown ul li{
+    list-style:none;
+    padding: 5px;
+
+}
+
+.photo-dropdown ul li i{
+    display:inline !important;
+} 
+.photo-dropdown ul li:hover{
+    background-color:#5caae6;
+    color:white;
+    cursor:pointer;
+} 
+
+.photo-dropdown .glyphicon{
+    
 }
