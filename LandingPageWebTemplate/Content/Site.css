@@ -44,13 +44,96 @@ input[type="checkbox"].input-validation-error {
 #addImageBtn{
     margin-top:15px;
 }
-
 .photo-item{
     padding-top:15px;
     position:relative;
 }
 
-.photo-item .caption{
+.products .photo-item{
+    padding-top:0px;
+    position:relative;
+    overflow: hidden;
+    z-index:10;
+}
+
+.products .photo-item img{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: none;
+    transition:none;
+}
+.products .photo-item .hover-mask{
+    position: absolute;
+    padding:0px;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left:0px;
+    bottom:20px;
+    background:#509B9E;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    -webkit-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+}
+
+.products .photo-item .hover-mask .item-title{
+    color:#fff;
+    margin:70px 0 0;
+    padding:10px;
+    font-size:26px;
+    line-height:34px;
+    font-weight:400;
+    text-align:center;
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    -webkit-transition:all 0.5s ease-out;
+    transition:all 0.5s ease-out;
+}
+.products .photo-item .hover-mask p{
+    color:#fff;
+    margin:0;
+    font-size:16px;
+    line-height:24px;
+    font-weight:400;
+    text-transform:uppercase;
+    text-align:center;
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    -webkit-transition:all 0.3s ease-out 0s;
+    transition:all 0.3s ease-out 0s;
+}
+
+.products .photo-item:hover{
+    cursor:pointer;
+}
+
+.products .photo-item:hover img {
+  -webkit-transform: scale(1.6);
+  transform: scale(1.6);
+  -webkit-transition: -webkit-transform 4s ease-in;
+  transition: transform 4s linear;
+}
+.products .photo-item:hover .hover-mask {
+  opacity: .55;
+  filter: alpha(opacity=55);
+}
+.products .photo-item:hover .hover-mask .item-title {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+.products .photo-item:hover .hover-mask p {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-out 0.2s;
+  transition: all 0.3s ease-out 0.2s;
+}
+
+.products .photo-item .caption{
     padding-bottom:0px;
 }
 

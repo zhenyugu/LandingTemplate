@@ -30,9 +30,11 @@ namespace LandingPageWebTemplate.Controllers
             return View();
         }
 
-        public ActionResult Products()
+        public ActionResult Products()        
         {
-            return View();
+            List<Production> productionsWithImage = DbContext.Productions.Include(p => p.Images).ToList();
+
+            return View(productionsWithImage);
         }
 
         public ActionResult Culture()
