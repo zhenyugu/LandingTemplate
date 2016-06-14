@@ -39,10 +39,17 @@ namespace LandingPageWebTemplate.Controllers
         {
             return View();
         }
-
-        public ActionResult ProductQuery()
+        public ActionResult ProductQuery(string serialNumber)
         {
-            return View();
+            var production = DbContext.Productions.FirstOrDefault(r => r.SerialNumber == serialNumber);
+            return View(production);
+        }
+
+        public ActionResult QueryBySerialNumber(string serialNumber)
+        {
+            var result = DbContext.Productions.Include(p => p.Images).FirstOrDefault(r => r.SerialNumber == serialNumber);
+            //  var result= DbContext.Productions.FirstOrDefault(r => r.SerialNumber == serialNumber);
+            return View("ProductResult", result);
         }
     }
 }

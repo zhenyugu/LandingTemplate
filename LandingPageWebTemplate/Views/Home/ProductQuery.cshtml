@@ -20,21 +20,31 @@
             <h1 class="page-header">证书查询</h1>
             <div class="row">
                 <div class="col-md-8">
-                    <form name="sentMessage" id="contactForm" novalidate="">
+                    @using (Ajax.BeginForm("QueryBySerialNumber", "Home", new AjaxOptions { OnSuccess = "renderCustomerList" }))
+                    {
                         <div class="control-group form-group">
                             <div class="controls">
                                 <label>证书编号</label>
-                                <input type="text" class="form-control" id="name" required="" data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" name="serialNumber">
                                 <p class="help-block"></p>
                             </div>
                         </div>
                         <div id="success"></div>
                         <!-- For success/fail messages -->
                         <button type="submit" class="btn btn-primary">查询</button>
-                    </form>
+                    }
                 </div>
 
             </div>
+            <div class="row">
+                <div id="productResult"></div>
+            </div>
         </div>
     </div>
+
 </div>
+<script type="text/javascript">
+    function renderCustomerList(data) {
+        $("#productResult").html(data);
+    }
+</script>
