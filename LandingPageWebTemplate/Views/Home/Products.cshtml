@@ -40,9 +40,9 @@
         </div>
         @foreach (var production in Model)
         {
-            <div class="col-xs-6 col-md-3 ">
+            <div class="col-xs-6 col-md-3 mt-xl">
                 <div class="photo-item">
-                    <div class="thumbnail" id="@production.Id">
+                    <div class="thumbnail p0" id="@production.Id">
                         <img src="@production.Images.First().ImageAddress" alt="image" />
                         <div class="hover-mask">
                             <div class="item-title">@production.Name</div>
