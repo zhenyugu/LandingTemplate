@@ -323,6 +323,7 @@
     <Content Include="Views\Account\UserManagement.cshtml" />
     <Content Include="Views\Home\ProductQuery.cshtml" />
     <Content Include="Views\Home\ProductResult.cshtml" />
+    <Content Include="Views\Home\ProductQueryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
