@@ -251,6 +251,7 @@
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Content\font-awesome\scss\font-awesome.scss" />
     <None Include="Properties\PublishProfiles\pinyuwu.pubxml" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
