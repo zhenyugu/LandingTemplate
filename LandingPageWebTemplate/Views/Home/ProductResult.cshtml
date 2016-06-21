@@ -1,0 +1,43 @@
+﻿@model DataAccessLayer.Model.Production
+<div class="container">
+    @if (Model != null)
+    {
+        <div class="panel-heading">
+            <h2>@Model.Name</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12 col-lg-6">
+                    <img src="@Model.Images.First().ImageAddress" />
+                </div>
+                <div class="col-xs-12 col-lg-6">
+                    <dl class="dl-horizontal" style="font-size:16px;">
+                        <dt><label>[证书编号]</label></dt>
+                        <dd>@Model.SerialNumber</dd>
+                    </dl>
+                    <dl class="dl-horizontal" style="font-size:16px;">
+                        <dt><label>[作者]</label></dt>
+                        <dd>@Model.Author</dd>
+                    </dl>
+                    <dl class="dl-horizontal" style="font-size:16px;">
+                        <dt><label>[尺寸]</label></dt>
+                        <dd>@Model.Size &nbsp;mm</dd>
+                    </dl>
+                    <dl class="dl-horizontal" style="font-size:16px;">
+                        <dt><label>[重量]</label></dt>
+                        <dd>@Model.Weight &nbsp;g</dd>
+                    </dl>
+                    <dl class="dl-horizontal" style="font-size:16px;">
+                        <dt><label>[简介]</label></dt>
+                        <dd>@Model.Description</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div style="font-size:20px;">没有查询到相关信息。</div>
+    }
+</div>

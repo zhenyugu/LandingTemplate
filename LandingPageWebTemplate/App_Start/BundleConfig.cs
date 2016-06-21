@@ -21,7 +21,8 @@ namespace LandingPageWebTemplate
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                       "~/Scripts/jquery.validate*"));
+                "~/Scripts/jquery.validate.unobtrusive.min.js",
+                       "~/Scripts/jquery-1.10.2.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
