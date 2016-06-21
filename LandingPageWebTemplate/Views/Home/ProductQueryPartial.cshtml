@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;   
+}
+
+@using (Ajax.BeginForm("QueryBySerialNumber", "Home",new AjaxOptions { OnSuccess = "renderCustomerList" }))
+{
+    <div class="control-group form-group">
+        <div class="controls">
+            <label>证书编号</label>
+            <input type="text" class="form-control" name="serialNumber">
+            <p class="help-block"></p>
+        </div>
+    </div>
+    <div id="success"></div>
+                        <!-- For success/fail messages -->
+    <button type="submit" class="btn btn-primary">查询</button>
+}

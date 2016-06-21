@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jqueryval")
     @*@Styles.Render("~/Views/Shared/css/bootstrap.min.css")
         @Styles.Render("~/Views/Shared/css/landing-page.css")
         @Styles.Render("~/Views/Shared/font-awesome/css/font-awesome.min.css")*@
@@ -44,9 +45,6 @@
                     </li>
                     <li>
                         @Html.ActionLink("证书查询", "ProductQuery", "Home")
-                    </li>
-                    <li>
-                        <a href="#contact">证书管理</a>
                     </li>
                     <li>
                         @Html.ActionLink("联系我们", "Contact", "Home")

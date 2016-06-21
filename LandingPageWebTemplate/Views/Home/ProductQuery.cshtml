@@ -16,25 +16,19 @@
     </form>*@
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-12">
             <h1 class="page-header">证书查询</h1>
             <div class="row">
-                <div class="col-md-8">
-                    <form name="sentMessage" id="contactForm" novalidate="">
-                        <div class="control-group form-group">
-                            <div class="controls">
-                                <label>证书编号</label>
-                                <input type="text" class="form-control" id="name" required="" data-validation-required-message="Please enter your name.">
-                                <p class="help-block"></p>
-                            </div>
-                        </div>
-                        <div id="success"></div>
-                        <!-- For success/fail messages -->
-                        <button type="submit" class="btn btn-primary">查询</button>
-                    </form>
-                </div>
+                <div class="col-sm-8">
+                    @Html.Partial("ProductQueryPartial")
 
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function renderCustomerList(data) {
+        $("#productResult").html(data);
+    }
+</script>
