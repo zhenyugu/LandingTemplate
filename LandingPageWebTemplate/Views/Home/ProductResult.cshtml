@@ -38,6 +38,9 @@
     }
     else
     {
-        <div style="font-size:20px;">没有查询到相关信息。</div>
+        <div style="font-size:20px;">
+            没有查询到相关信息。
+            @Html.ActionLink("返回", "ProductQuery", "", new { @class = "btn btn-primary" })
+        </div>
     }
 </div>

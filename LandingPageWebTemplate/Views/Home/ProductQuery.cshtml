@@ -17,13 +17,19 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="page-header">证书查询</h1>
+            <h2 class="section-heading">证书查询</h2>
             <div class="row">
                 <div class="col-sm-8">
                     @Html.Partial("ProductQueryPartial")
-
+                </div>
+                <div class="col-sm-8">
+                    <div>
+                        <h4 class="normal-weight">提示信息</h4>
+                        <p class="normal-weight">1.请输入证书上的证书编号</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -32,3 +38,9 @@
         $("#productResult").html(data);
     }
 </script>
+
+<style>
+    .normal-weight {
+        font-weight:normal;
+    }
+</style>
