@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:#EAE7DE;
+    /*background-color:#EAE7DE;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -43,6 +43,9 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+.pb-2x{
+    padding-bottom:20px;
+}
 #addImageBtn{
     margin-top:15px;
 }
@@ -155,6 +158,10 @@ input[type="checkbox"].input-validation-error {
 
 }
 
+.photo-item .thumbnail{
+    padding:0px;
+}
+
 .thumbnail > img{
     height:210px;
 }
@@ -223,7 +230,7 @@ input[type="checkbox"].input-validation-error {
 .body-footer{
     height:150px;
     background-color:white;
-    padding:50px 0;
+    padding:0px 0px 50px 0px;
 }
 
 .wrapper-clear{
@@ -231,5 +238,15 @@ input[type="checkbox"].input-validation-error {
     clear:both;
 }
 .chinese-bg{
-    background-image:url("images/chinese-bg.jpg");
+    background-image:url("images/chinese-bg4.jpg");
+}
+.landing-hr{
+    border-color:red;
+}
+.landing-hr-bold{
+    border-top:3px solid red !important;
+}
+
+.products-bg{
+    background-image:url("images/chinese-bg4.jpg")
 }
