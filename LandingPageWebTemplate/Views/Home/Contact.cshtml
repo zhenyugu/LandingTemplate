@@ -1,29 +1,93 @@
 ﻿@{
     Layout = "../Shared/_Layout.cshtml";
 }
+<section id="contact" class="contacts-section">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>联系我们</h2>
+            <p>
+                您可以致电我们或者来店铺面谈。 <br>
+                您也可以选择给我们留言，我们会在不久后联系您。
+            </p>
+        </div>
+        <hr />
+
+        <div class="row contacts-in">
+            <div class="col-md-6 md-margin-bottom-40">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home">地址&nbsp;&nbsp;</i> 苏州市 项王路 项王玉器城 XXX号</li>
+                    <li><i class="fa fa-phone">电话&nbsp;&nbsp;</i> 1(800) 220 084</li>
+                    <li><i class="fa fa-envelope">邮箱&nbsp;&nbsp;</i>info@example.com</a></li>
+                    <li><i class="fa fa-globe">网址&nbsp;&nbsp;</i> <a href="">www.htmlstream.com</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <form action="assets/php/sky-forms-pro/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form contact-style" novalidate="novalidate">
+                    <fieldset>
+                        <label>称呼</label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="name" id="name" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label>电话 <span class="color-red">*</span></label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label>留言</label>
+                        <div class="row">
+                            <div class="col-md-11 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </fieldset>
+                    <p><button type="submit" class="btn btn-primary">留言</button></p>
+                    @*<div class="message">
+                        <i class="rounded-x fa fa-check"></i>
+                        <p>Your message was successfully sent!</p>
+                    </div>*@
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Header -->
-<a name="about"></a>
+@*<a name="about"></a>
 <div class="">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h2 class="page-header">联系方式</h2>
-                <div class="row">                  
+              
+                <div class="row">   
                     <div class="col-md-4">
                         <p>
-                            苏州市相王玉器城 铺位号
-                        </p>
+                            <i class="fa fa-phone"></i>
+                            <b>店面地址</b>: 苏州市项王路 项王玉器城 XXX号
                         <p>
                             <i class="fa fa-phone"></i>
-                            <abbr title="Phone">电话</abbr>: (123) 456-7890
+                            <b>联系电话</b>: (123) 456-7890
                         </p>
                         <p>
                             <i class="fa fa-envelope-o"></i>
-                            <abbr title="Email">Email</abbr>: <a href="mailto:name@example.com">pinyuwu@example.com</a>
+                            <b>Email</b>: <a class="form-inline" href="mailto:name@example.com">pinyuwu@example.com</a>
                         </p>
                         <p>
                             <i class="fa fa-clock-o"></i>
-                            <abbr title="Hours">工作时间</abbr>: 每日 8:00- 17:00
+                            <b>工作时间</b>: 每日 8:00- 17:00
                         </p>
                         <ul class="list-unstyled list-inline list-social-icons">
                             <li>
@@ -45,7 +109,7 @@
             <div class="col-md-12">
                 <h2 class="page-header">给我留言</h2>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-5">
                         <form name="sentMessage" id="contactForm" novalidate="">
                             <div class="control-group form-group">
                                 <div class="controls">
@@ -69,7 +133,6 @@
                                 </div>
                             </div>
                             <div id="success"></div>
-                            <!-- For success/fail messages -->
                             <button type="submit" class="btn btn-primary">留言</button>
                         </form>
                     </div>
@@ -77,8 +140,7 @@
             </div>
         </div>
     </div>
-    <!-- /.container -->
-</div>
+</div>*@
 
 @*<div class="banner">
         <div class="container">
@@ -92,3 +154,34 @@
             </div>
         </div>
     </div>*@
+
+<style>
+    .title-v1 h2 {
+            color: #444;
+    font-size: 28px;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-family: "Open Sans", Arial, sans-serif;
+    }
+
+    .contacts-in ul {
+    margin-top: 20px;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.contacts-in li {
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+</style>
