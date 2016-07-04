@@ -1,25 +1,30 @@
 ﻿@{
     Layout = "../Shared/_Layout.cshtml";
 }
-<section id="contact" class="contacts-section">
+<div class="container">
     <div class="container content-lg">
+        <h2>联系我们</h2>
+        <hr />
         <div class="title-v1">
-            <h2>联系我们</h2>
-            <p>
-                您可以致电我们或者来店铺面谈。 <br>
-                您也可以选择给我们留言，我们会在不久后联系您。
+            <p class="bg-primary">
+                您可以致电或者来店铺与我们详谈。 <br>
+                您也可以选择给我们留言，我们会在不久后联系您。(后台开发中，暂未开放)
             </p>
         </div>
-        <hr />
 
         <div class="row contacts-in">
             <div class="col-md-6 md-margin-bottom-40">
                 <ul class="list-unstyled">
                     <li><i class="fa fa-home">地址&nbsp;&nbsp;</i> 苏州市 项王路 项王玉器城 XXX号</li>
-                    <li><i class="fa fa-phone">电话&nbsp;&nbsp;</i> 1(800) 220 084</li>
-                    <li><i class="fa fa-envelope">邮箱&nbsp;&nbsp;</i>info@example.com</a></li>
-                    <li><i class="fa fa-globe">网址&nbsp;&nbsp;</i> <a href="">www.htmlstream.com</a></li>
+                    <li><i class="fa fa-phone">电话&nbsp;&nbsp;</i> 152-6258-2851</li>
+                    <li><i class="fa fa-envelope">邮箱&nbsp;&nbsp;</i> info@example.com</li>
+                    <li><i class="fa fa-globe">网址&nbsp;&nbsp;</i> <a href=""> www.pinyuwu.com</a></li>
+                    <li><i class="fa fa-globe">微信&nbsp;&nbsp;</i> gjh727 扫描二维码添加好友</li>
+                    <li>
+                        <i class="fa fa-globe">&nbsp;&nbsp;</i><img class="img-rounded" height="300" width="300" src="~/Content/images/wechat_pic.png" />
+                    </li>
                 </ul>
+
             </div>
 
             <div class="col-md-6">
@@ -29,7 +34,7 @@
                         <div class="row">
                             <div class="col-md-7 margin-bottom-20 col-md-offset-0">
                                 <div>
-                                    <input type="text" name="name" id="name" class="form-control">
+                                    <input type="text" name="name" id="name" disabled="disabled" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -38,7 +43,7 @@
                         <div class="row">
                             <div class="col-md-7 margin-bottom-20 col-md-offset-0">
                                 <div>
-                                    <input type="text" name="email" id="email" class="form-control">
+                                    <input type="text" name="email" id="email" disabled="disabled" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -47,141 +52,20 @@
                         <div class="row">
                             <div class="col-md-11 margin-bottom-20 col-md-offset-0">
                                 <div>
-                                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                                    <textarea rows="8" name="message" id="message" disabled="disabled" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
 
-                       
+
                     </fieldset>
-                    <p><button type="submit" class="btn btn-primary">留言</button></p>
+                    <p><button type="submit" class="btn btn-primary" disabled="disabled">留言</button></p>
                     @*<div class="message">
-                        <i class="rounded-x fa fa-check"></i>
-                        <p>Your message was successfully sent!</p>
-                    </div>*@
+                            <i class="rounded-x fa fa-check"></i>
+                            <p>Your message was successfully sent!</p>
+                        </div>*@
                 </form>
             </div>
         </div>
     </div>
-</section>
-<!-- Header -->
-@*<a name="about"></a>
-<div class="">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="page-header">联系方式</h2>
-              
-                <div class="row">   
-                    <div class="col-md-4">
-                        <p>
-                            <i class="fa fa-phone"></i>
-                            <b>店面地址</b>: 苏州市项王路 项王玉器城 XXX号
-                        <p>
-                            <i class="fa fa-phone"></i>
-                            <b>联系电话</b>: (123) 456-7890
-                        </p>
-                        <p>
-                            <i class="fa fa-envelope-o"></i>
-                            <b>Email</b>: <a class="form-inline" href="mailto:name@example.com">pinyuwu@example.com</a>
-                        </p>
-                        <p>
-                            <i class="fa fa-clock-o"></i>
-                            <b>工作时间</b>: 每日 8:00- 17:00
-                        </p>
-                        <ul class="list-unstyled list-inline list-social-icons">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h2 class="page-header">给我留言</h2>
-                <div class="row">
-                    <div class="col-md-5">
-                        <form name="sentMessage" id="contactForm" novalidate="">
-                            <div class="control-group form-group">
-                                <div class="controls">
-                                    <label>姓名:</label>
-                                    <input type="text" class="form-control" id="name" required="" data-validation-required-message="Please enter your name.">
-                                    <p class="help-block"></p>
-                                </div>
-                            </div>
-                            <div class="control-group form-group">
-                                <div class="controls">
-                                    <label>手机:</label>
-                                    <input type="tel" class="form-control" id="phone" required="" data-validation-required-message="Please enter your phone number.">
-                                    <div class="help-block"></div>
-                                </div>
-                            </div>
-                            <div class="control-group form-group">
-                                <div class="controls">
-                                    <label>留言:</label>
-                                    <textarea rows="10" cols="200" class="form-control" id="message" required="" data-validation-required-message="Please enter your message" maxlength="999" style="resize:none;max-width: 90% !important;"></textarea>
-                                    <div class="help-block"></div>
-                                </div>
-                            </div>
-                            <div id="success"></div>
-                            <button type="submit" class="btn btn-primary">留言</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
-
-@*<div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>欢迎随时联系我</h2>
-                </div>
-                <div class="col-lg-6">
-                    <h2>186 xxxx xxxx</h2>
-                </div>
-            </div>
-        </div>
-    </div>*@
-
-<style>
-    .title-v1 h2 {
-            color: #444;
-    font-size: 28px;
-    position: relative;
-    margin-bottom: 15px;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    font-family: "Open Sans", Arial, sans-serif;
-    }
-
-    .contacts-in ul {
-    margin-top: 20px;
-}
-.list-unstyled {
-    padding-left: 0;
-    list-style: none;
-}
-
-.contacts-in li {
-    margin: 15px 0;
-    font-size: 16px;
-    font-weight: 200;
-}
-
-.margin-bottom-20 {
-    margin-bottom: 20px;
-}
-
-</style>
+ </div>

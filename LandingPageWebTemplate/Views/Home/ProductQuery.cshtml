@@ -1,36 +1,30 @@
 ﻿@{
     Layout = "../Shared/_Layout.cshtml";
 }
-@*<form class="form-horizontal text-center">
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="productId">证书编号</label>
-            <div class="col-sm-10">
-                @Html.TextBox("productId", "", new { @class = "form-control", @placeholder = "输入证书编号" })
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">查询</button>
-            </div>
-        </div>
-    </form>*@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h2 class="section-heading">证书查询</h2>
-            <div class="row">
-                <div class="col-sm-8">
-                    @Html.Partial("ProductQueryPartial")
-                </div>
-                <div class="col-sm-8">
-                    <div>
-                        <h4 class="normal-weight">提示信息</h4>
-                        <p class="normal-weight">1.请输入证书上的证书编号</p>
-                        <p class="normal-weight">2.如果未查到预期信息或者信息有误请即时联系我们</p>
+    <div class="container content-lg">
+        <h2>证书查询</h2>
+        <hr />
+        <div class="title-v1">
+            <p class="bg-primary">
+                我们对在品玉屋所购买的玉作提供证书查询服务。
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-8">
+                        @Html.Partial("ProductQueryPartial")
+                    </div>
+                    <div class="col-sm-8">
+                        <div>
+                            <h4 class="normal-weight">提示信息</h4>
+                            <p class="normal-weight">1.请输入证书上的证书编号</p>
+                            <p class="normal-weight">2.如果未查到预期信息或者信息有误请即时 @Html.ActionLink("联系我们", "Contact", "Home")</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -42,6 +36,6 @@
 
 <style>
     .normal-weight {
-        font-weight:normal;
+        font-weight: normal;
     }
 </style>
