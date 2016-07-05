@@ -248,6 +248,10 @@ input[type="checkbox"].input-validation-error {
     border-top:3px solid #F0A5A0 !important;
 }
 
+.landing-hr-bold-grey{
+    border-top:3px solid #e7e7e7;
+}
+
 .products-bg{
     background-image:url("images/chinese-bg4.jpg")
 }
@@ -285,6 +289,12 @@ input[type="checkbox"].input-validation-error {
     font-size: 16px;
     font-weight: 200;
 }
+.group-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
 
 .margin-bottom-20 {
     margin-bottom: 20px;
@@ -294,4 +304,33 @@ input[type="checkbox"].input-validation-error {
     background-color: #dff0d8;
     padding: 10px;
     line-height: 2;
+}
+
+.headline-left {
+    position: relative;
+}
+
+
+.headline-brd {
+    color: #555;
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+    margin-left: 40%;
+}
+
+.feature-title {
+    float: left;
+    clear: both;
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.feature-value {
+    float: left;
 }
